@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - Myuwa Obaki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const videos = document.querySelectorAll(".preview-video");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            const video = entry.target;
+
+            if (entry.isIntersecting) {
+
+                // Pastikan mute agar autoplay diizinkan browser
+                video.muted = true;
+
+                const playPromise = video.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Video gagal autoplay:", error);
+                    });
+                }
+
+            } else {
+
+                video.pause();
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.25
+    });
+
+    videos.forEach(video => {
+        observer.observe(video);
+    });
+
+});
+
+
+function toggleMute(button) {
+
+    const video = button
+        .closest(".preset-card")
+        .querySelector(".preview-video");
+
+    if (video.muted) {
+        video.muted = false;
+        button.textContent = "🔊";
+    } else {
+        video.muted = true;
+        button.textContent = "🔇";
+    }
+
+}
+  </script>
+<body>
+
+    <header>
+        <div class="profile-section">
+            <img src="../img/pp.jpg" alt="Poto Profil" class="profile-img">
+            <div class="profile-name">KAMIYA <span>SENPAII</span></div>
+        </div>
+        <!-- <a href="#login" class="btn-login">Login</a> -->
+    </header>
+
+    <main class="layanan-container">
+        <h2>Preset AM</h2>
+        <p class="layanan-desc">Preset Alight Motion (AM) 5mb,Xml Siap Pakai:</p>
+
+        <!-- Grid Card Preset AM -->
+        <div class="preset-grid">
+
+            <!-- Card 1 -->
+            <div class="preset-card">
+                <img src="../img/poster.gif" alt="Preview Preset 1" class="preset-img">
+                <div class="preset-content">
+                    <h3 class="preset-title">Preset Dj Gak Pake Lama</h3>
+                    <p class="preset-author">By Myuwa Obaki</p>
+                    <a href="#" target="_blank" class="btn-preset">Gunakan Preset (5MB)</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="preset-card">
+    <video
+        class="preset-img preview-video"
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source src="../video/montagemalquimia.mp4" type="video/mp4">
+    </video>
+
+    <button class="mute-btn" onclick="toggleMute(this)">🔇</button>
+
+    <div class="preset-content">
+        <h3 class="preset-title">Preset Dj Montagem Alquimia</h3>
+        <p class="preset-author">By Myuwa Obaki</p>
+
+        <a href="https://alightcreative.com/am/share/u/daoIbumwGrOjKPckz2JTLXccJIO2/p/nr8iGfk3Nm-34e3ff959bc875d6"
+           target="_blank"
+           class="btn-preset">
+            Gunakan Preset (5MB)
+        </a>
+    </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="preset-card">
+                <img src="../img/poster.gif" alt="Preview Preset 3" class="preset-img">
+                <div class="preset-content">
+                    <h3 class="preset-title">Preset Dj C I N T A</h3>
+                    <p class="preset-author">By Myuwa Obaki</p>
+                    <a href="#" target="_blank" class="btn-preset">Gunakan Preset (5MB)</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <a href="index.html" class="btn-back">← Kembali ke Beranda</a> -->
+    </main>
+
+    <footer>
+        <p>Saya <strong>Myuwa Obaki</strong> Terima Kasih Karna Sudah Mengunjungi Website Saya, Dan Untuk Sosmed Saya Ada Di Bagian Akun Atmin</p>
+    </footer>
+
+</body>
+</html>

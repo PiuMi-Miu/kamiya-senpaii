@@ -1,0 +1,471 @@
+/* Reset & Styling Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --bg-dark: #1e1e24;       /* Hideung teu teuing poek (Charcoal) */
+    --bg-card: #2b2b36;       /* Warna latar box/konten */
+    --primary-red: #e63946;   /* Beureum */
+    --accent-yellow: #ffb703; /* Koneng */
+    --text-light: #f1faee;    /* Teks bodas/padang */
+    --text-muted: #a8b2c1;    /* Teks abu-abu */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header (Sejajar Kasamping) */
+header {
+    background-color: #141419;
+    border-bottom: 2px solid var(--primary-red);
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-yellow);
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.profile-name span {
+    color: var(--primary-red);
+}
+
+/*.btn-login {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: transparent;
+    color: var(--accent-yellow);
+    border: 1px solid var(--accent-yellow);
+}*/
+
+/* Navigasi (Baris Horizontal) */
+nav {
+    background-color: var(--bg-card);
+    padding: 12px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-yellow);
+}
+
+/* Area Konten Utama */
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+section {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-red);
+}
+
+h2 {
+    color: var(--accent-yellow);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+p {
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Tombol Sosmed (Sejajar Kasamping) */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: var(--text-light);
+    background-color: var(--primary-red);
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-yellow);
+    color: #000;
+}
+
+/* Footer */
+footer {
+    background-color: #141419;
+    border-top: 2px solid var(--accent-yellow);
+    text-align: center;
+    padding: 18px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+footer strong {
+    color: var(--primary-red);
+}
+/* Layout Kontak Tanpa Kotak */
+.kontak-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.kontak-desc {
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+/* Daftarkeun Sosmed Ngajajar ka Handap */
+.social-list {
+    display: flex;
+    flex-direction: column; /* Muter jalur jadi ngajajar ka handap */
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Base Style Tombol Sosmed */
+.btn-sosmed {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-sosmed:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Warna Sesuai Aplikasi */
+.btn-sosmed.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.btn-sosmed.youtube {
+    background-color: #ff0000;
+}
+
+.btn-sosmed.tiktok {
+    background-color: #000000;
+    border: 1px solid #333333;
+}
+
+.btn-sosmed.whatsapp {
+    background-color: #25d366;
+}
+
+/* Layout Khusus Beranda */
+.beranda-container {
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-title {
+    color: var(--accent-yellow);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.welcome-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+/* Daftar Menu Navigasi Ngajajar ka Handap */
+.menu-list {
+    display: flex;
+    flex-direction: column; /* Barisken ka handap */
+    gap: 15px;              /* Jarak antar tombol */
+    width: 100%;
+    max-width: 400px;        /* Samakan lebarna jiga tombol sosmed */
+}
+
+/* Styling Tombol Menu Navigasi */
+.btn-menu {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    background-color: var(--bg-card);
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 5px solid var(--primary-red); /* Garis aksen beureum di kenca */
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect Tombol Menu */
+.btn-menu:hover {
+    background-color: var(--primary-red);
+    color: #ffffff;
+    border-left-color: var(--accent-yellow);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+}
+/* Styling Banner / GIF */
+.banner-box {
+    width: 100%;
+    max-width: 400px; /* Samakan lebarnana jeung tombol menu */
+    margin-bottom: 25px; /* Jarak antara GIF jeung tombol menu */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--accent-yellow); /* Bingkai warna koneng */
+    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.2);
+}
+
+.banner-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+/* Layout Tentang Kami Tanpa Box */
+.tentang-container {
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tentang-desc {
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+/* Daftarkeun Tombol Ngajajar ka Handap */
+.product-list {
+    display: flex;
+    flex-direction: column; /* Barisken ka handap */
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px; /* Samakan lebarnana jeung tombol kontak */
+}
+
+/* Base Style Tombol Produk */
+.btn-product {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-product:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Warna Sesuai Aplikasi */
+.btn-product.am-prem {
+    /* background-color: #00e676; */ /* Héjo Alight Motion */
+    background : linear-gradient(45deg, #00e676, black);
+    color: #ffffff;
+}
+
+.btn-product.capcut-prem {
+    background-color: #ffffff; /* Bodas khas CapCut */
+    color: #000000;
+}
+
+.btn-product.spotify-prem {
+    background-color: black; /* Héjo khas Spotify */
+    color: #ffffff;
+}
+/* Layout Utama Layanan */
+.layanan-container {
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.layanan-desc {
+    margin-bottom: 30px;
+    color: var(--text-muted);
+}
+
+/* Container Grid Card */
+.preset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
+/* Styling Card Preset AM */
+.preset-card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 4px solid #00e676; /* Aksén héjo AM */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.preset-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 230, 118, 0.2);
+}
+
+/* Gambar/Thumbnail Card */
+.preset-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Eusi Card */
+.preset-content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.preset-title {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+.preset-author {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+/* Tombol Download/Akses Preset */
+.btn-preset {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #00e676; /* Héjo khas Alight Motion */
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-preset:hover {
+    background-color: #00c853;
+}
+.preset-card {
+    position: relative;
+}
+
+.preview-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.mute-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+
+    border: none;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    font-size: 18px;
+}
